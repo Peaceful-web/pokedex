@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="./favicons/favicon-16x16.png"> <!--link com a pasta favicons para trazer a imagem da pokedex-->
+    <link rel="stylesheet" href="./CSS/style.css"> <!-- link com arquivo css -->
+
+    <script defer src="./JS/script.js"></script> <!--Não esquecer do defer ao importar o script.js, para não ocorrer o erro de carregar o script antes do html-->
+
+    <title>Pokedex</title>
+</head>
+
+<body>
+
+    <main> <!--Tag que contém o conteúdo principal do html-->
+        <img src="#" class="pokemon__image" alt="pokemon"> <!--a imagem de baixo aumentou consequentemente com a edição desta na nova img, configurar no css a class .pokedex e colocar um max-width: 425px para evitar possíveis alterações-->
+
+        <h1 class="pokemon__data"> <!--h1 é um cabeçalho contendo os dados do pokemon-->
+            <span class="pokemon__number"></span> -<!--span é um espaço para texto estilizado contendo a numeração de cada pokemon-->
+            <span class="pokemon__name"></span>
+        </h1> <!--<h1> é um cabeçalho (header)-->
+
+        <form class="form"> <!--form é tag de formulário, A tag <form> cria um bloco para que tags de formulário e seus dados sejam agrupados e encaminhados para outro documento-->
+            <input 
+            type="search" 
+            class="input__search"
+            placeholder="Name or Number"
+            required
+            /> <!--Botão input do tipo busca, placeholder é a instrução dentro do input, required torna o preenchimento do input(ou formulário) obrigatório para executar a sua função-->
+
+        </form>
+
+        <div class="buttons"> <!--O elemento de divisão **HTML <div> **é um container genérico para conteúdo de fluxo, que de certa forma não representa nada. no caso, vai conter os butões Prev < e Next >-->
+            <button class="button btn-prev">Prev &lt;</button> <!-- botão Prev -->
+            <button class="button btn-next">Next &gt;</button><!--Botão Next-->
+        </div>
+
+        <img src="./imagens/pokedex.png" alt="Pokedex" class="pokedex"> <!--importando a imagem da pokedex-->
+    </main>
+    
+</body>
+</html>

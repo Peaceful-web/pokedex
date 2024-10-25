@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap'); /*importação da fonte estilizada direto do link*/
+
+*{ /* * se refere a todo o conteúdo do html*/
+    margin: 0; /*margem*/
+    padding: 0; /*preenchimento,  padding define uma distância entre o conteúdo de um elemento e suas bordas*/
+    box-sizing: border-box; /*box-sizing é definido pela borda*/
+    font-family: 'Oxanium', cursive;
+
+}
+
+body{
+    text-align: center; /*vai centralizar todos os elementos do body no centro (fdse se é redundante)*/
+    background: linear-gradient(to bottom, #6ab7f5, #fff);
+    /*linear-gradient(to bottom) adiciona uma cor de fundo até a margem inferior do elemento(to bottom)*/
+    min-height: 100vh; /*visualização mínima da altura vai se estender em 100% da tela*/
+}
+
+
+main{
+    /*background-color: red; /*cor de fundo da <main<*/
+    /*é preciso fazer a tag main ocupar a mesma largura da imagem*/
+    display: inline-block;
+    /*No display inline, todos os elementos preenchem uma única linha, por isso ficam alinhados, no caso do block, cada elemento da lista ocupa uma linha, por isso ficam um abaixo do outro. Comparado com inline, a principal diferença é que display: inline-block permite definir uma largura e altura no elemento.*/
+    margin-top: 2%; /*2% de margem com o topo*/
+    padding: 15px; /*preenchimento da tag <main> de 15 pixels, deixando um espaço entre a imagem e o main*/
+    position: relative; /*agora todos os elementos contendo positions: absolute vão respeitar as delimitações da tag main*/
+}
+
+/*ESTILIZANDO A IMAGEM CONTENDO A CLASS=pokedex*/
+.pokedex{
+    width: 100%; /*a largura da imagem vai pegar sempre 100% da tela mesmo se aumentar e diminuir*/
+    max-width: 425px; /*o máximo que a largura de tela vai ocupar é 450 pixels*/
+
+}
+/*Class referente à imagem do pokemon*/
+.pokemon__image{
+    position: absolute; /*Absolute. Essa propriedade position CSS é usada para que o elemento da página parta do ponto superior esquerdo a outros elementos.
+    
+    Ela faz com que o elemento “saia” da hierarquia estabelecida pelo HTML – na prática, ele é filho da página e não de um elemento qualquer no HTML definido. Assim, é possível posicionarmos esse elemento em qualquer lugar da página, independentemente do que temos lá.*/
+
+    /*left: 0; /*distância do lado esquerdo (respeitando a delimitação da <main>)*/
+
+    bottom: 55%; /*Vai ocupar 55% da margem inferior no espaço da tag <main>*/
+
+    left: 50%; /*vai ocupar 50% da distância pro lado esquerda da tag main*/
+
+    transform: translate(-63%, 20%); /*transform é a propriedade referente à posição do elemento, o translate serve para reposicionar um elemento na direção horizontal e/ou vertical na sua página, nos parenteses(eixo x, eixo y), no caso, vai pegar 63% da imagem e puxar pra esquerda e 20% para baixo*/
+
+    height: 18%; /*altura vai ocupar 18% da main, agora o tamanho do pokemon vai acompanhar também o tamnho da main e da pokedex*/
+
+
+
+}
+
+/*ESTE É O H1 CONTENDO OD DADOS(spans) DO POKEMON*/
+.pokemon__data{
+    position: absolute; /*torna possível posicionar o elemento em quanlquer lugar da página (dentro das delimitações da tag main, é claro, por essa ter um position: relative*/
+    font-weight: 600; /*font-weight é a grossura da fonte*/
+    color: #aaa; /*cor do texto*/
+    top: 54.5%; /*vai ocupar 54.5% com relação ap topo*/ 
+    right: 27%; /*vai ocupar 27* do lado direito*/
+    font-size: clamp(8px, 5vw, 25px); /*tamanho da fonte clamp(min, padrão(default), max), o tamanho da fonte vai variar entre os valores entre parenteses dependendo do tamanho da tela*/
+}
+
+/*SPAN CORRESPONDENTE AO NOME DO POKEMON*/
+.pokemon__name{
+    color: #3a444d;
+    text-transform: capitalize; /*Capitaliza a letra inicial do texto*/
+}
+
+
+/*ACESSANDO A <form> por meio da class form*/
+
+.form{
+    position: absolute; /*agora pode ocupar qualquer lugar da tela dentro da main*/
+    /*background-color: red; /*cor de fundo*/
+    width: 65%; /*largura vai ocupar 100% do espaço da main*/
+    top: 65%; /*posição de 65% do topo*/
+    left: 13.5%; /*13.5% à esquerda. TODOS OS VALORES DENTRO DO MAIN*/
+}
+
+.input__search{
+    width: 100%; /*Largura do input vai ocupar 100% da largura do form*/
+    padding: 4%; /*preenchimento do botão vai ser sempre de 4% independente do tamanho da tela*/
+    outline: none; /*remove aquela borda azul quando seleciona o input*/
+    border: 2px, solid #333; /*borda de 2 pixels da cor preta*/
+    border-radius: 5px; /*raio de borda de 5 pixel*/
+    font-weight: 600; /*grossura da fonte pra ficar mais negrito*/
+    color: #3a444d;
+    font-size: clamp(8px, 5vw, 1rem); /*A rem ("root em") é o tamanho de fonte do elemento-raiz do documento.*/
+    box-shadow: -3px 4px 0 #888, -5px 7px 0 #333; /*caixa de sombra em volta do imput(eixo x, eixo y, tamanho e cor) é possível colocar mais de uma sombra com os mesmos parâmetros após a vírgula, valores negativos no eixo x se posicionam à esquerda do elemento, valores positivos no eixo y se posicionam abaixo do elemento em questão*/
+}
+
+
+/*ESTILIZANDO A <div class=button>, A DIV QUE CONTÉM OS BOTÕES PREV E NEXT */
+.buttons{
+    position: absolute;/*posição em qualquer lugar da tela dentro do main*/
+    bottom: 10%; /*ocupa 10% da margem inferior do main*/
+    left: 50%; /*50% à esquerda do main*/
+    width: 65%; /*largura de 65%*/
+    /*background-color: red;*/
+    transform: translate(-57%, 0); /*transform: translate(eixo x, eixo y)*/
+    display: flex; /*VAI ALINHAR OS ELEMENTOS(BOTÕES) UM AO LADO DO OUTRO*/
+    gap: 20px; /*MARGEM DE 20 PIXELS ENTRE OS BOTÕES*/
+}
+
+.button{ /*estilizando os dois buttons dentro da div por conterem cada un una class de mesmo nome*/
+    width: 50%;
+    padding: 4%;
+    border: 2px, solid #000;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: clamp(8px, 5vw, 1rem);
+    color: white;
+    background-color: #3a444d;
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+}
+
+.button:active{ /*a pseudo class :active diz respeito ao momento que o usuário clica com o mouse no elemento .button*/
+    box-shadow: inset -4px 4px 0 #222; /*inset é uma sombra interna ao elemento, aparentemente os valores dos eixos invertem*/
+    font-size: 0.9rem; /*tamanho da fonte vai diminuir ao pressionar o botão*/
+}
+
